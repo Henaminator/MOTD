@@ -1,0 +1,30 @@
+name: MOTD
+version: 2.0
+main: me.Henaminator.MOTD
+description: A simple Message of the Day.
+
+
+commands:
+    motd:
+        usage: /<command>
+        description: View MOTD
+    setmotd:
+        usage: /<command>
+        description: Set MOTD
+    setsystemmotd:
+        usage: /<command>
+        description: Set MOTD
+
+permissions:
+    motd.*:
+        description: Use all MOTD commands.
+        children:
+             motd.check: true
+             motd.set: true
+        default: op
+    motd.check:
+        description: Check the MOTD.
+        default: true
+    motd.set:
+        description: Use the setmotd command to change the MOTD.
+        default: op
