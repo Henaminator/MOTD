@@ -28,11 +28,11 @@ public class MOTD extends JavaPlugin implements Listener {
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {
             if (cmd.getName().equalsIgnoreCase("motd")) {
                     if (!sender.hasPermission("motd.check")) {
-                            sender.sendMessage(ChatColor.RED + "You are not permitted to do this!");
+                            sender.sendMessage(ChatColor.RED + "Du har ikke rettigheter til Ã¥ utfÃ¸re kommandoen!");
                             return true;
                     }
                     String system = getConfig().getString("motd.system");
-                    system = system.replaceAll("&", "§");
+                    system = system.replaceAll("&", "Â§");
                     sender.sendMessage(ChatColor.GREEN + "System MOTD: " + system);
                     return true;
             }
@@ -53,7 +53,7 @@ public class MOTD extends JavaPlugin implements Listener {
                     getConfig().set("motd.ingame", motd);
                     saveConfig();
                     String newmotd = getConfig().getString("motd.ingame");
-                    motd = motd.replaceAll("&", "§");
+                    motd = motd.replaceAll("&", "Â§");
                     sender.sendMessage(ChatColor.GREEN + "MOTD set to: " + newmotd);
                     return true;
             }
@@ -74,7 +74,7 @@ public class MOTD extends JavaPlugin implements Listener {
                     getConfig().set("motd.system", motd);
                     saveConfig();
                     String system = getConfig().getString("motd.system");
-                    system = system.replaceAll("&", "§");
+                    system = system.replaceAll("&", "Â§");
                     sender.sendMessage(ChatColor.GREEN + "MOTD set to: " + system);
                     return true;
             }
